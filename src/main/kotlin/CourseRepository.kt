@@ -1,7 +1,9 @@
 interface CourseRepository {
     fun readCourses() : List<Corso>
-    fun readCoursEditions() : List<EdizioneCorso>
+    //fun readCoursEditions() : List<EdizioneCorso>
+    fun readCoursEditions() : MutableList<EdizioneCorso?>
     fun courseById(id: Int) : Corso?
-    fun courseEditionsByCourseId(id: Int) : List<EdizioneCorso>?
+    //fun courseEditionsByCourseId(id: Int) : List<EdizioneCorso>?
+    fun courseEditionsByCourseId(id: Int) : List<EdizioneCorso?>
     fun add(corso: Corso) : Unit
 }

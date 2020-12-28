@@ -5,7 +5,7 @@ class MemoryRepository : CourseRepository {
     init {
         val c1 = Corso(3657,"APP Android",200,1800.0,"Imparare a programmare app Android",
             "programma del corso","Difficile","A2410")
-        val c2 = Corso(6987,"HTML, PHP, CSS",400,2500.0,"Programmazione web","prova",
+        val c2 = Corso(6987,"HTML-PHP-CSS",400,2500.0,"Programmazione web","prova",
             "Intermedio","I352N6")
         val ed1 = EdizioneCorso(256,c1, LocalDate.parse("2020-12-14"), LocalDate.parse("2021-03-12"),"Z523M3",
             mutableListOf(),200,1800.0)
@@ -33,8 +33,8 @@ class MemoryRepository : CourseRepository {
         return corsi
     }
 
-    override fun readCoursEditions(): List<EdizioneCorso> {
-        val edizioniCorso = mutableListOf<EdizioneCorso>()
+    override fun readCoursEditions(): MutableList<EdizioneCorso?> {
+        val edizioniCorso = mutableListOf<EdizioneCorso?>()
         for(c in corsi) {
             edizioniCorso.addAll(c.edizioni)
         }
@@ -50,13 +50,13 @@ class MemoryRepository : CourseRepository {
         return null
     }
 
-    override fun courseEditionsByCourseId(id: Int): List<EdizioneCorso>? {
+    override fun courseEditionsByCourseId(id: Int): List<EdizioneCorso?> {
         for(c in corsi) {
             if(c.id==id) {
                 return c.edizioni
             }
         }
-        return null
+        return null!!
     }
 
     override fun add(corso: Corso) {
