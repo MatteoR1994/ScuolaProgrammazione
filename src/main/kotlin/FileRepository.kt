@@ -16,7 +16,7 @@ class FileRepository : CourseRepository {
                 val corso = Corso.parse(courseLine)
                 corsi.add(corso)
                 val numEdizioni = corso.edizioni.size
-                println("Corso: ${corso.titolo}")
+                //println("Corso: ${corso.titolo}")
                 for(i in 0 until numEdizioni) {
                     val lineeEdizione = iter.next()
                     // Crea nuova edizione da questa linea
@@ -30,11 +30,11 @@ class FileRepository : CourseRepository {
             println("La sorgente dei dati al momento non è disponibile, contattare l'amministratore.")
             exitProcess(1)
         } finally {
-            println("Lettura file finita.")
+            //println("Lettura file finita.")
         }
     }
 
-    override fun readCourses(): List<Corso> {
+    override fun readCourses(): MutableList<Corso> {
         return memory.readCourses()
     }
 

@@ -7,7 +7,7 @@ class MemoryRepository(val corsi: MutableList<Corso> = mutableListOf()) : Course
             val c1 = Corso(3657, "APP IOS", 200, 1800.0, "Imparare a programmare app Android",
                 "programma del corso", "Difficile", "A2410"
             )
-            val c2 = Corso(6987, "HTML-PHP-CSS", 400, 2500.0, "Programmazione web", "prova",
+            val c2 = Corso(6987, "HTML-PHP-CSS_JQUERY", 400, 2500.0, "Programmazione web", "prova",
                 "Intermedio", "I352N6"
             )
             val ed1 = EdizioneCorso(256, c1, LocalDate.parse("2020-12-14"), LocalDate.parse("2021-03-12"), "Z523M3",
@@ -37,7 +37,7 @@ class MemoryRepository(val corsi: MutableList<Corso> = mutableListOf()) : Course
         }
     }
 
-    override fun readCourses(): List<Corso> {
+    override fun readCourses(): MutableList<Corso> {
         //var corsi = List<Corso>
         return corsi
     }
