@@ -1,7 +1,7 @@
 3657,"APP Android",200,1800.0,"Imparare a programmare app Android","programma del corso","Difficile","A2410",3
-256,c1, LocalDate.parse("2020-12-14"), LocalDate.parse("2021-03-12"),"Z523M3",mutableListOf(),200,1800.0
-698,c1, LocalDate.parse("2020-11-10"), LocalDate.parse("2021-04-20"),"A358ZZ",mutableListOf(),300,2000.0
-123,c1, LocalDate.parse("2021-02-04"), LocalDate.parse("2021-06-16"),"C65H99",mutableListOf(),250,1000.0
+256,2020-12-14,2021-03-12,"Z523M3",200,1800.0
+698,2020-11-10,2021-04-20,"A358ZZ",300,2000.0
+123,2021-02-04,2021-06-16,"C65H99",250,1000.0
 6987,"HTML-PHP-CSS",400,2500.0,"Programmazione web","prova","Intermedio","I352N6",2
-436,c2, LocalDate.parse("2020-03-10"), LocalDate.parse("2021-07-20"),"BB09TR",mutableListOf(),500,2500.0
-985,c2, LocalDate.parse("2020-12-09"), LocalDate.parse("2021-04-20"),"658GF9",mutableListOf(),450,1560.0
+436,2020-03-10,2021-07-20,"BB09TR",500,2500.0
+985,2020-12-09,2021-04-20,"658GF9",450,1560.0

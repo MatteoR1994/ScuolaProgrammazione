@@ -4,7 +4,7 @@ class Corso(var id: Int, var titolo: String, var numeroOre: Int, var costo: Doub
     companion object Utils {
         fun parse(line: String): Corso {
             val tokens = line.split(",")
-            val corso = Corso(tokens[0].toInt(),tokens[1],tokens[2].toInt(),tokens[3].toDouble(),tokens[4],tokens[5],tokens[6],tokens[7])
+            val corso = Corso(tokens[0].trim().toInt(),tokens[1].trim(),tokens[2].trim().toInt(),tokens[3].trim().toDouble(),tokens[4].trim(),tokens[5].trim(),tokens[6].trim(),tokens[7].trim())
             corso.edizioni = MutableList(tokens[8].toInt()){i -> null}
             return corso
         }
@@ -17,7 +17,7 @@ class Corso(var id: Int, var titolo: String, var numeroOre: Int, var costo: Doub
         var risultatoReport = ""
         for(e in edizioni) {
             val n: EdizioneCorso = e!!
-            risultatoReport += "Edizione: ${n.id} - Codice: ${n.codice} - Data inizio: ${n.dataInizio} - Data fine: ${n.dataFine} - Costo: ${n.costo} euro\n"
+            risultatoReport += "Corso: ${e.corso.titolo}, Edizione: ${n.id} - Codice: ${n.codice} - Data inizio: ${n.dataInizio} - Data fine: ${n.dataFine} - Costo: ${n.costo} euro\n"
             //println("Edizione: ${n.id} - Codice: ${n.codice} - Data inizio: ${n.dataInizio} - Data fine: ${n.dataFine} - Costo: ${n.costo} euro\n")
             if(n.costo>costoMaggiore) {
                 costoMaggiore=n.costo
@@ -30,5 +30,9 @@ class Corso(var id: Int, var titolo: String, var numeroOre: Int, var costo: Doub
         return risultatoReport
     }
 
+    fun toCsvLine() : String {
+        return "$id,$titolo,$numeroOre,$costo,$descrizione,$programma,$livello,$codice,${edizioni.size}"
+    }
 
+    // 3657,"APP Android",200,1800.0,"Imparare a programmare app Android","programma del corso","Difficile","A2410",3
 }
