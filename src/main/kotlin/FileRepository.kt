@@ -22,7 +22,8 @@ class FileRepository : CourseRepository {
                     // Crea nuova edizione da questa linea
                     val edizione = EdizioneCorso.parse(lineeEdizione,corso)
                     // Inserisci nuova edizione in posizione i delle edizioni del corso
-                    corso.edizioni.add(i,edizione)
+                    //corso.edizioni.add(i,edizione)
+                    corso.edizioni[i] = edizione
                 }
             }
             memory = MemoryRepository(corsi)

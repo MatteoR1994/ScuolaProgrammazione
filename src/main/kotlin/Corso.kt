@@ -34,5 +34,33 @@ class Corso(var id: Int, var titolo: String, var numeroOre: Int, var costo: Doub
         return "$id,$titolo,$numeroOre,$costo,$descrizione,$programma,$livello,$codice,${edizioni.size}"
     }
 
-    // 3657,"APP Android",200,1800.0,"Imparare a programmare app Android","programma del corso","Difficile","A2410",3
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
+
+        other as Corso
+
+        if (id != other.id) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        return id
+    }
+
+//    override fun equals(other: Any?): Boolean {
+//        if (this === other) return true // Controllo se ho passato me stesso
+//        if(other==null) {
+//            return false
+//        }
+//        if(this.javaClass!=other.javaClass) {
+//            return false
+//        }
+//        other as Corso // Considera other come se fosse di classe Corso = cast
+//        return other.id==id
+//    }
+
+
+
 }
