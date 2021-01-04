@@ -17,11 +17,6 @@ class EdizioneCorso(var id: Int, var corso: Corso, var dataInizio: LocalDate, va
         for(n in moduli) {
             sommaOre += n.numeroOre
         }
-        /*if(sommaOre == numeroOre) {
-            return true
-        } else {
-            return false
-        }*/
         return sommaOre==numeroOre
     }
 

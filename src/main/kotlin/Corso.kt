@@ -12,7 +12,6 @@ class Corso(var id: Int, var titolo: String, var numeroOre: Int, var costo: Doub
 
     fun report(): String { // 1: Stampa codice - data inizio/fine - costo; 2: Costo maggiore e minore delle edizioni
         var costoMaggiore = 0.0
-        //var costoMinore = 0.0
         var costoMinore = edizioni[0]!!.costo
         var risultatoReport = ""
         for(e in edizioni) {
@@ -34,33 +33,30 @@ class Corso(var id: Int, var titolo: String, var numeroOre: Int, var costo: Doub
         return "$id,$titolo,$numeroOre,$costo,$descrizione,$programma,$livello,$codice,${edizioni.size}"
     }
 
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (javaClass != other?.javaClass) return false
-
-        other as Corso
-
-        if (id != other.id) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        return id
-    }
-
 //    override fun equals(other: Any?): Boolean {
-//        if (this === other) return true // Controllo se ho passato me stesso
-//        if(other==null) {
-//            return false
-//        }
-//        if(this.javaClass!=other.javaClass) {
-//            return false
-//        }
-//        other as Corso // Considera other come se fosse di classe Corso = cast
-//        return other.id==id
+//        if (this === other) return true
+//        if (javaClass != other?.javaClass) return false
+//
+//        other as Corso
+//
+//        if (id != other.id) return false
+//
+//        return true
+//    }
+//
+//    override fun hashCode(): Int {
+//        return id
 //    }
 
-
-
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true // Controllo se ho passato me stesso
+        if(other==null) {
+            return false
+        }
+        if(this.javaClass!=other.javaClass) {
+            return false
+        }
+        other as Corso // Considera other come se fosse di classe Corso = cast
+        return other.id==id
+    }
 }

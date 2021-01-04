@@ -59,10 +59,18 @@ class FileRepository : CourseRepository {
         var file: File = File("src/main/resources/corsi.csv")
         val pw = file.printWriter()
         //pw.println() // Permette di scrivere una linea di testo sul file, passando una stringa.
-        for(c in corsi) {
+        /*for(c in corsi) {
             pw.println(c.toCsvLine())
             for(e in c.edizioni) {
                 pw.println(e!!.toCsvLine())
+            }
+        }*/
+        pw.use { out ->
+            for(c in corsi) {
+                out.println(c.toCsvLine())
+                for(e in c.edizioni) {
+                    out.println(e!!.toCsvLine())
+                }
             }
         }
     }
